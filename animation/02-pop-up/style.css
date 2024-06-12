@@ -41,6 +41,11 @@ button {
   text-align: center;
 }
 
+@keyframes fade {
+  0%,100% { opacity: 0 }
+  100% { opacity: 1 }
+}
+
 .popup-modal p {
   margin-bottom: 24px;
 }
@@ -55,9 +60,19 @@ button {
 
 .popup-modal.show {
   opacity: 100%;
-  pointer-events: all;
+  pointer-events: all; 
+  
 }
 
 .backdrop.show {
   opacity: 30%;
+}
+
+.popup-modal {
+  transition: transform 0.3s ease-in-out, opacity 0.4s ease;
+  transform: translate(-50%, -100%);
+}
+
+.popup-modal.show {
+  transform: translate(-50%, -50%);
 }
